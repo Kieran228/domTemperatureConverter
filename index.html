@@ -21,15 +21,16 @@
                     Enter the Temperature and Select the Temperature unit
                 </div>
                 <div class="user-input">
-                    <input type="text" id="userinput" placeholder="Degrees #" >
+                    <input type="text" id="userinput" placeholder="Degrees #">
                 </div>
                 <!-- Initial Unit button -->
-                <div class="initial-temp-unit-button btn-group">
-                    <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="initial-temp-unit-button initial-split-button btn-group">
+                    <!--Toggle Style and Split dropdown style-->
+                    <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" input type="button">
                     </button>
                     <!--Text side of button-->
                     <button class="btn btn-lg btn-primary" type="button">Initial Unit?</button>
-                    <!--Toggle Style and Split dropdown style-->
+                    
                     <!--Dropdown list-->
                     <ul class="dropdown-menu dropdown-menu">
                         <li>
@@ -49,10 +50,10 @@
                         </li>
                     </ul>
                 </div>
-                <!--End of Unit Button-->
+                <!--End of Initial Unit Button-->
 
                 <!-- Target Temp Unit button -->
-                <div class="target-unit-button btn-group">
+                <div class="target-unit-button btn-group target-split-button">
                     <!--Text side of button-->
                     <button class="btn btn-lg btn-success" type="button">Target Unit?</button>
                     <!--Toggle Style and Split dropdown style-->
@@ -81,7 +82,7 @@
 
                 <!--Convert Button-->
                 <div class="convert-button">
-                    <button class="btn btn-lg btn-warning">Convert</button>
+                    <button class="btn btn-lg btn-warning" id="convertButton">Convert</button>
                 </div>
             </div>
             <div class="title-colored-text col-sm-2 ps-5 text-center">
@@ -135,7 +136,7 @@
     </div>
         <div class="results container">
             <div class="row pt-5">
-                <div class="display-fahrenheit-results text-centert d-sm-flex">
+                <div class="display-fahrenheit-results text-center d-sm-flex">
                     <img class="img-fluid" src="./media/fahrenheit.png" height="100px" width="50px" alt="">
                     <div class="fahreinheit-result-textbox">
                         <input type="text">

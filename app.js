@@ -40,4 +40,53 @@
 //* kelvinNum - 273.15
 
 //* fahrenheitToCelsius:
-//* (fahrenheit - 32) * 5/9
+//* (fahrenheit - 32) * 5/9\
+//? Initial Temp Unit Button Selector
+let initialUnitButton = document.querySelector(".initial-split-button button")
+let initialUnitChoice = initialUnitButton.value
+console.log(initialUnitChoice)
+
+//? Target Unit Button Selector
+let targetUnitButton = document.querySelector(".target-split-button button")
+
+//? Converter Button
+let converterButton = document.getElementById("convertButton")
+
+//? User Temp Value input
+let userTempValueInput = document.getElementById("userinput")
+userInput = userTempValueInput.value
+console.log(userInput)
+
+
+
+function tempConverter(initialUnit, temperature, targetUnit) {
+    if (targetUnit === "K" && initialUnit == "C") {
+        return (temperature + 273.15);
+    } else if (targetUnit == "F" && initialUnit == "C") {
+         return (temperature * 9/5 + 32);
+    } else if (targetUnit == "C" && initialUnit == "K") {
+         return (temperature - 273.15);
+    } else if (targetUnit == "C" && initialUnit == "F") {
+         return (temperature - 32) * 5/9;
+    }
+ };
+
+ converterButton.addEventListener("click", tempConverter)
+
+//? Calculation functions
+function celsiusToKelvin(value) {
+    return value + 273.15
+}
+
+function celsiusToFahrenheit(value) {
+    return (value * 9/5) + 32;
+}
+
+function kelvinToCelsius(value) {
+    return value - 273.15
+}
+
+function fahrenheitToCelsius(value) {
+   return (value - 32) * 5/9
+}
+
