@@ -6,9 +6,157 @@
 
     <title>Temperature Converter</title>
     
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
 </head>
 <body>
-    
+    <div class="container">
+        <div class="row">
+            <div class="title-temp text-center pt-3 col-10">
+                <span style="color: orange;">
+                    Temperature
+                </span>
+                <div class="temp-converter-label col-12 text-center pt-5">
+                    Enter the Temperature and Select the Temperature unit
+                </div>
+                <div class="user-input">
+                    <input type="text" id="userinput" placeholder="Degrees #" >
+                </div>
+                <!-- Initial Unit button -->
+                <div class="initial-temp-unit-button btn-group">
+                    <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    </button>
+                    <!--Text side of button-->
+                    <button class="btn btn-lg btn-primary" type="button">Initial Unit?</button>
+                    <!--Toggle Style and Split dropdown style-->
+                    <!--Dropdown list-->
+                    <ul class="dropdown-menu dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="">
+                                Fahreinheit
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="">
+                                Celsius
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="">
+                                Kelvin
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--End of Unit Button-->
+
+                <!-- Target Temp Unit button -->
+                <div class="target-unit-button btn-group">
+                    <!--Text side of button-->
+                    <button class="btn btn-lg btn-success" type="button">Target Unit?</button>
+                    <!--Toggle Style and Split dropdown style-->
+                    <button type="button" class="btn btn-lg btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    </button>
+                    <!--Dropdown list-->
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li>
+                            <a class="dropdown-item" href="">
+                                Fahrenheit
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="">
+                                Celsius
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="">
+                                Kelvin
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--End of Unit Button-->
+
+                <!--Convert Button-->
+                <div class="convert-button">
+                    <button class="btn btn-lg btn-warning">Convert</button>
+                </div>
+            </div>
+            <div class="title-colored-text col-2 ps-5">
+                <span style="color: #960403;"> 
+                    <p>
+                        C
+                    </p>
+                </span>
+                <span style="color: #f80000;"> 
+                    <p>
+                        o   
+                    </p>
+                </span>
+                <span style="color: #fa7e02;"> 
+                    <p>
+                        n  
+                    </p>
+                </span>
+                <span style="color: #f7f900;"> 
+                    <p>
+                        v   
+                    </p>
+                </span>
+                <span style="color: #4ebf99;"> 
+                    <p>
+                        e   
+                    </p>
+                </span>
+                <span style="color: #01a0ce;"> 
+                    <p>
+                        r  
+                    </p>
+                </span>
+                <span style="color: #0089e5;"> 
+                    <p>
+                        t   
+                    </p>
+                </span>
+                <span style="color: #005fda;"> 
+                    <p>
+                        e   
+                    </p>
+                </span>
+                <span style="color: #0137e0;"> 
+                    <p>
+                        r   
+                    </p>
+                </span>
+            </div>
+        </div>
+        <div class="results container">
+            <div class="row pt-5">
+                <div class="display-fahrenheit-results col-sm-3">
+                    <img class="img-fluid" src="./media/fahrenheit.png" alt="">
+                    <div class="fahreinheit-result-textbox">
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="display-celsius-results col-sm-4">
+                    <img class="img-fluid" src="./media/celsius.png" alt="">
+                    <div class="fahreinheit-result-textbox">
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="display-kelvin-results col-sm-3">
+                    <img class="img-fluid" src="./media/kelvinLogo.webp" alt="">
+                    <div class="fahreinheit-result-textbox">
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-<script type="text/javascript" src="app.js" ></script>
+<script type="text/javascript" src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 </html>
