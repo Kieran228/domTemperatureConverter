@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="title-temp text-center pt-3 col-10">
+            <div class="title-temp text-center pt-3 col-sm-10">
                 <span style="color: orange;">
                     Temperature
                 </span>
@@ -84,7 +84,7 @@
                     <button class="btn btn-lg btn-warning">Convert</button>
                 </div>
             </div>
-            <div class="title-colored-text col-2 ps-5">
+            <div class="title-colored-text col-sm-2 ps-5 text-center">
                 <span style="color: #960403;"> 
                     <p>
                         C
@@ -132,29 +132,30 @@
                 </span>
             </div>
         </div>
+    </div>
         <div class="results container">
             <div class="row pt-5">
-                <div class="display-fahrenheit-results col-sm-3">
-                    <img class="img-fluid" src="./media/fahrenheit.png" alt="">
+                <div class="display-fahrenheit-results text-centert d-sm-flex">
+                    <img class="img-fluid" src="./media/fahrenheit.png" height="100px" width="50px" alt="">
                     <div class="fahreinheit-result-textbox">
                         <input type="text">
                     </div>
                 </div>
-                <div class="display-celsius-results col-sm-4">
-                    <img class="img-fluid" src="./media/celsius.png" alt="">
+                <div class="display-celsius-results text-center d-sm-flex">
+                    <img class="img-fluid" src="./media/celsius.png" height="50px" width="100px" alt="">
                     <div class="fahreinheit-result-textbox">
                         <input type="text">
                     </div>
                 </div>
-                <div class="display-kelvin-results col-sm-3">
-                    <img class="img-fluid" src="./media/kelvinLogo.webp" alt="">
+                <div class="display-kelvin-results text-center d-sm-flex">
+                    <img class="img-fluid" src="./media/kelvinLogo.webp" height="100px" width="50px" alt="">
                     <div class="fahreinheit-result-textbox">
                         <input type="text">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    
 </body>
 <script type="text/javascript" src="app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
