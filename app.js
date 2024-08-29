@@ -41,37 +41,60 @@
 
 //* fahrenheitToCelsius:
 //* (fahrenheit - 32) * 5/9\
-//? Initial Temp Unit Button Selector
-let initialUnitButton = document.querySelector(".initial-split-button button")
-let initialUnitChoice = initialUnitButton.value
-console.log(initialUnitChoice)
 
-//? Target Unit Button Selector
+
+//? 4. JavaScript Logic
+//* DOM Manipulation:
+//* Select the necessary elements (e.g., input fields, dropdowns, buttons, result display) using JavaScript.
+//* Conversion Functions:
+//* Write functions that handle the conversion logic between Celsius, Fahrenheit, and Kelvin.
+//* Event Handling:
+//* Implement event listeners that trigger the conversion when the user interacts with the page (e.g., clicking the "Convert" button).
+//* Result Display:
+//* Update the result area of the page with the converted temperature.
+//! 5. Bonus Features (Optional)
+//* Input Validation: Ensure that the user inputs valid temperature values.
+//* Unit Conversion Validation: Prevent unnecessary conversions, such as converting from Celsius to Celsius.
+//* Additional Features: Consider adding features like converting to multiple units simultaneously or a reset button to clear the inputs and results.
+
+//? Temp Value input
+let tempValue = document.getElementById("userinput")
+// userInput = tempValue.value
+let userInputValue = ""
+
+//? This event listener is consisently tracking input changes
+//! Makes sure the tag "userinput" is being targeted correctly!
+tempValue.addEventListener("input", () => {
+    userInputValue = tempValue.value
+    console.log(userInputValue)
+})
+
+//? Initial Temp Unit
+let initialUnitButton = document.querySelector(".iUnitButton button")
+
+let initialUnitOptions = document.querySelectorAll(".dropdown1 li a")
+
+let initialUnitDropDown = document.getElementById("dropdown")
+let selectedUnit = initialUnitDropDown.value
+
+initialUnitOptions[0].addEventListener("click", () => {
+    if (selectedUnit == initialUnitOptions[0].value) {
+        console.log(initialUnitOptions[0].innerHTML)
+    }
+})
+
+
+    
+
+
+
+
+//? Target Temp Unit
 let targetUnitButton = document.querySelector(".target-split-button button")
 
 //? Converter Button
 let converterButton = document.getElementById("convertButton")
-
-//? User Temp Value input
-let userTempValueInput = document.getElementById("userinput")
-userInput = userTempValueInput.value
-console.log(userInput)
-
-
-
-function tempConverter(initialUnit, temperature, targetUnit) {
-    if (targetUnit === "K" && initialUnit == "C") {
-        return (temperature + 273.15);
-    } else if (targetUnit == "F" && initialUnit == "C") {
-         return (temperature * 9/5 + 32);
-    } else if (targetUnit == "C" && initialUnit == "K") {
-         return (temperature - 273.15);
-    } else if (targetUnit == "C" && initialUnit == "F") {
-         return (temperature - 32) * 5/9;
-    }
- };
-
- converterButton.addEventListener("click", tempConverter)
+ 
 
 //? Calculation functions
 function celsiusToKelvin(value) {
