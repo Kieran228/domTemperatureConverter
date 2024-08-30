@@ -30,36 +30,10 @@
 //* Unit Conversion Validation: Prevent unnecessary conversions, such as converting from Celsius to Celsius.
 //* Additional Features: Consider adding features like converting to multiple units simultaneously or a reset button to clear the inputs and results.
 
-//* celsiusToKelvin:
-//* celsiusNum + 273.15
-
-//* celsiusToFahrenheit:
-//* (celsius * 9/5) + 32
-
-//* KelvinToCelsius conversion:
-//* kelvinNum - 273.15
-
-//* fahrenheitToCelsius:
-//* (fahrenheit - 32) * 5/9\
-
-
-//? 4. JavaScript Logic
-//* DOM Manipulation:
-//* Select the necessary elements (e.g., input fields, dropdowns, buttons, result display) using JavaScript.
-//* Conversion Functions:
-//* Write functions that handle the conversion logic between Celsius, Fahrenheit, and Kelvin.
-//* Event Handling:
-//* Implement event listeners that trigger the conversion when the user interacts with the page (e.g., clicking the "Convert" button).
-//* Result Display:
-//* Update the result area of the page with the converted temperature.
-//! 5. Bonus Features (Optional)
-//* Input Validation: Ensure that the user inputs valid temperature values.
-//* Unit Conversion Validation: Prevent unnecessary conversions, such as converting from Celsius to Celsius.
-//* Additional Features: Consider adding features like converting to multiple units simultaneously or a reset button to clear the inputs and results.
-
-//? Temp Value input
+//? Creating a variable for the temperature textbox
 let tempValue = document.getElementById("userinput")
-// userInput = tempValue.value
+
+//? Creating an empty string to store user inputs in
 let userInputValue = ""
 
 //? This event listener is consisently tracking input changes
@@ -69,47 +43,102 @@ tempValue.addEventListener("input", () => {
     console.log(userInputValue)
 })
 
-//? Initial Temp Unit
-let initialUnitButton = document.querySelector(".iUnitButton button")
+//? Creating an empty string to store user selections in
+var selectedInitialUnit = ""
+let selectedTargetUnit = ""
 
-let initialUnitOptions = document.querySelectorAll(".dropdown1 li a")
+//? Setting the option tag "Fahrenheit" to a variable
+var fahrenheitInitialUnitOption = document.getElementById("fahrenheit")
 
-let initialUnitDropDown = document.getElementById("dropdown")
-let selectedUnit = initialUnitDropDown.value
+function initialFahrenheitDisplayer() {  
+    selectedInitialUnit = fahrenheitInitialUnitOption.value
+    console.log(selectedInitialUnit)
+    initialButton.innerHTML = "Fahrenheit"
+}
 
-initialUnitOptions[0].addEventListener("click", () => {
-    if (selectedUnit == initialUnitOptions[0].value) {
-        console.log(initialUnitOptions[0].innerHTML)
+//? Setting the option tag "Fahrenheit" to a variable
+var fahrenheitTargetUnitOption = document.getElementById("targetFahrenheit")
+
+function targetFahrenheitDisplayer() {
+    selectedTargetUnit = fahrenheitTargetUnitOption.value
+    console.log(selectedTargetUnit)
+    targetButton.innerHTML = "Fahrenheit"
+}
+
+let fahrenheitTextBox = document.getElementById("fahrenheitResults")
+
+//? Setting the option tag "celsius" to a variable
+let celsiusUnitInitialOption = document.getElementById("initialCelsius")
+
+function initialCelsiusDisplayer() { 
+    selectedInitialUnit = celsiusUnitInitialOption.value
+    console.log(selectedInitialUnit)
+    initialButton.innerHTML = "Celsius"
+}
+//? Setting the option tag "celsius" to a variable
+let celsiusTargetUnitOption = document.getElementById("targetCelsius")
+
+function targetCelsiusDisplayer() {
+    selectedTargetUnit = celsiusTargetUnitOption.value
+    console.log(selectedTargetUnit)
+    targetButton.innerHTML = "Celsius"
+}
+
+let celsiusTextBox = document.getElementById("celsiusResults")
+
+//? Setting the option tag "Kelvin" to a variable
+let kelvinUnitInitialOption = document.getElementById("initialKelvin")
+
+function initialKelvinDisplayer() { 
+    selectedInitialUnit = kelvinUnitInitialOption.value
+    console.log(selectedInitialUnit)
+    initialButton.innerHTML = "Kelvin"
+}
+//? Setting the option tag "Kelvin" to a variable
+let kelvinTargetUnitOption = document.getElementById("targetKelvin")
+
+function targetKelvinDisplayer() {
+    selectedTargetUnit = kelvinTargetUnitOption.value
+    console.log(selectedTargetUnit)
+    targetButton.innerHTML = "Kelvin"
+}
+
+let kelvinTextBox = document.getElementById("kelvinResults")
+
+//? Creating a variable for the initial unit button
+let initialButton = document.getElementById("initialButton")
+
+//? Creating a variable for the target unit button
+let targetButton = document.getElementById("targetButton")
+
+// //? Converter Button
+let converterButton = document.getElementById("convertButton")
+
+converterButton.addEventListener("click", () => {
+    if (selectedInitialUnit === "Fahrenheit" && selectedTargetUnit === "Celsius") {
+        let conversion = (userInputValue - 32) * 5/9
+        celsiusTextBox.value = conversion.toFixed(2)
+    } 
+    if (selectedInitialUnit === "Celsius" && selectedTargetUnit === "Fahrenheit") {
+        let conversion = (userInputValue * 9/5) + 32
+        fahrenheitTextBox.value = conversion.toFixed(2)
+    }
+    if (selectedInitialUnit === "Celsius" && selectedTargetUnit === "Kelvin") {
+        Number(userInputValue)
+        let conversion = (Number(userInputValue) + 273.15)
+        kelvinTextBox.value = conversion
+    }
+    if (selectedInitialUnit === "Celsius" && selectedTargetUnit === "Kelvin") {
+        Number(userInputValue)
+        let conversion = (Number(userInputValue) - 273.15)
+        kelvinTextBox.value = conversion
     }
 })
 
 
-    
 
 
 
-
-//? Target Temp Unit
-let targetUnitButton = document.querySelector(".target-split-button button")
-
-//? Converter Button
-let converterButton = document.getElementById("convertButton")
  
 
-//? Calculation functions
-function celsiusToKelvin(value) {
-    return value + 273.15
-}
-
-function celsiusToFahrenheit(value) {
-    return (value * 9/5) + 32;
-}
-
-function kelvinToCelsius(value) {
-    return value - 273.15
-}
-
-function fahrenheitToCelsius(value) {
-   return (value - 32) * 5/9
-}
 
